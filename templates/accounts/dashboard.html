@@ -1,0 +1,327 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<head>
+    <title>Document</title>
+    
+    <style>
+        .center {
+          text-align: center;
+          padding: 10px;
+        }
+        
+        .flex-container{
+            width: 60%;
+            min-height: 100px;
+            margin: 0 auto;
+            display: -webkit-flex; /* Safari */		
+            display: flex; /* Standard syntax */
+            
+        }
+        .flex-container .column{
+            padding: 40px;
+            
+            -webkit-flex: 1; /* Safari */
+            -ms-flex: 1; /* IE 10 */
+            flex: 1; /* Standard syntax */
+        }
+        /*.flex-container .column.bg-alt{
+           
+        }*/
+
+        .v{
+             text-align: center;
+             /*margin: 200px;*/
+     }   
+
+     .center {
+        margin: auto;
+        width: 50%;
+        /*border: 3px solid green;*/
+        padding: 10px;
+      }
+
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 50%;
+        margin: auto;
+      }
+      th, td {
+        padding: 5px;
+      }
+     body{
+    background-color: #30caa0;
+    position: static;
+  }
+    
+  </style>
+  
+</head>
+        <body>
+ 
+            <div class = "center">
+                <h1>Select Teams </h1>
+             </div>
+             <form action="{% url 'dashboard' %}" method="POST">
+                {% csrf_token %}
+                <div class="flex-container">
+                    <div class="column">
+
+                        <label for="team1">Choose a team :</label>
+                        <input list="browsers" id="myBrowser" name="team1" />
+
+                        <datalist id="browsers">
+                            <option value="Arsenal">
+                            <option value="Aston Villa">
+                            <option value="Bournemouth">
+                            <option value="Brighton & Hove Albion">
+                            <option value="Burnely">
+                            <option value="Chelsea">
+                            <option value="Crystal Palace">
+                            <option value="Everton">
+                            <option value="Leicester City">
+                            <option value="Liverpool">
+                            <option value="Manchester City">
+                            <option value="Manchester United">
+                            <option value="Newcastle United">
+                            <option value="Norwich City">
+                            <option value="Sheffield United">
+                            <option value="Southampton">
+                            <option value="Tottenham Hotspur">
+                            <option value="Watford">
+                            <option value="West Ham United">
+                            <option value="Wolverhampton Wanderers"> 
+                            <option value="Alavés">
+                            <option value="Athletic Bilbao">
+                            <option value="Atlético Madrid">
+                            <option value="FC Barcelona">
+                            <option value="Celta Vigo">
+                            <option value="Eibar">
+                            <option value="Espanyol"> 
+                            <option value="Getafe">
+                            <option value="Granada">   
+                            <option value="Leganés">
+                            <option value="Levante">
+                            <option value="Mallorca">
+                            <option value="Osasuna">
+                            <option value="Real Betis">
+                            <option value="Real Madrid">
+                            <option value="Real Sociedad">
+                            <option value="Sevilla"> 
+                            <option value="Valencia">
+                            <option value="Valladolid">   
+                            <option value="Villarreal"> 
+                            <option value="FC Bayern München">               
+                            <option value="Borussia Dortmund">  
+                            <option value="	Eintracht Frankfurt">
+                            <option value="SC Freiburg">               
+                            <option value="Hertha BSC">  
+                            <option value="Bayer 04 Leverkusen">
+                            <option value="FC Schalke 04">               
+                            <option value="SV Werder Bremen">  
+                            <option value="VfL Wolfsburg">
+                            <option value="1. FC Köln">               
+                            <option value="Borussia Mönchengladbach">  
+                            <option value="1. FSV Mainz 05">
+                            <option value="1. FC Union Berlin">               
+                            <option value="Fortuna Düsseldorf">  
+                            <option value="SC Paderborn 07">
+                            <option value="FC Augsburg">               
+                            <option value="1899 Hoffenheim">  
+                            <option value="RB Leipzig"> 
+                            <option value="Paris Saint-Germain">
+                            <option value="Amiens">
+                            <option value="Angers">
+                            <option value="Bordeaux">
+                            <option value="Brest">
+                            <option value="Dijon">
+                            <option value="Lille">
+                            <option value="Lyon">
+                            <option value="Marseille">
+                            <option value="Monaco">
+                            <option value="Metz">
+                            <option value="Montpellier">
+                            <option value="Nantes">
+                            <option value="Nice">
+                            <option value="Nîmes">
+                            <option value="Reims">
+                            <option value="Rennes">
+                            <option value="Saint-Étienne">
+                            <option value="Strasbourg">
+                            <option value="Toulouse">
+                            <option value="Atalanta"> 
+                            <option value="Bologna">
+                            <option value="Cagliari">
+                            <option value="Fiorentina">
+                            <option value="Genoa">
+                            <option value="Hellas Verona">
+                            <option value="Inter">
+                            <option value="Juventus">
+                            <option value="Lazio">
+                            <option value="Lecce">
+                            <option value="Milan">
+                            <option value="Napoli">
+                            <option value="Parma">
+                            <option value="Roma">
+                            <option value="Sampdoria">
+                            <option value="Sassuolo">
+                            <option value="SPAL">
+                            <option value="Torino">
+                            <option value="Udinese">
+                            
+                                    
+                            
+                                                                            
+                                                        
+                        </datalist>
+
+                    </div>
+                    <div class="column bg-alt">
+                         <label for="team2">Choose a team :</label>
+                         <input list="browsers" id="myBrowser" name="team2" />
+                            <datalist id="browsers">
+                                    <option value="Arsenal">
+                                    <option value="Aston Villa">
+                                    <option value="Bournemouth">
+                                    <option value="Brighton & Hove Albion">
+                                    <option value="Burnely">
+                                    <option value="Chelsea">
+                                    <option value="Crystal Palace">
+                                    <option value="Everton">
+                                    <option value="Leicester City">
+                                    <option value="Liverpool">
+                                    <option value="Manchester City">
+                                    <option value="Manchester United">
+                                    <option value="Newcastle United">
+                                    <option value="Norwich City">
+                                    <option value="Sheffield United">
+                                    <option value="Southampton">
+                                    <option value="Tottenham Hotspur">
+                                    <option value="Watford">
+                                    <option value="West Ham United">
+                                    <option value="Wolverhampton Wanderers">
+                                    <option value="Alavés">
+                                    <option value="Athletic Bilbao">
+                                    <option value="Atlético Madrid">
+                                    <option value="FC Barcelona">
+                                    <option value="Celta Vigo">
+                                    <option value="Eibar">
+                                    <option value="Espanyol"> 
+                                    <option value="Getafe">
+                                    <option value="Granada">   
+                                    <option value="Leganés">
+                                    <option value="Levante">
+                                    <option value="Mallorca">
+                                    <option value="Osasuna">
+                                    <option value="Real Betis">
+                                    <option value="Real Madrid">
+                                    <option value="Real Sociedad">
+                                    <option value="Sevilla"> 
+                                    <option value="Valencia">
+                                    <option value="Valladolid">   
+                                    <option value="Villarreal"> 
+                                    <option value="FC Bayern München">               
+                                    <option value="Borussia Dortmund">  
+                                    <option value="	Eintracht Frankfurt">
+                                    <option value="SC Freiburg">               
+                                    <option value="Hertha BSC">  
+                                    <option value="Bayer 04 Leverkusen">
+                                    <option value="FC Schalke 04">               
+                                    <option value="SV Werder Bremen">  
+                                    <option value="VfL Wolfsburg">
+                                    <option value="1. FC Köln">               
+                                    <option value="Borussia Mönchengladbach">  
+                                    <option value="1. FSV Mainz 05">
+                                    <option value="1. FC Union Berlin">               
+                                    <option value="Fortuna Düsseldorf">  
+                                    <option value="SC Paderborn 07">
+                                    <option value="FC Augsburg">               
+                                    <option value="1899 Hoffenheim">  
+                                    <option value="RB Leipzig"> 
+                                    <option value="Paris Saint-Germain">
+                                    <option value="Amiens">
+                                    <option value="Angers">
+                                    <option value="Bordeaux">
+                                    <option value="Brest">
+                                    <option value="Dijon">
+                                    <option value="Lille">
+                                    <option value="Lyon">
+                                    <option value="Marseille">
+                                    <option value="Monaco">
+                                    <option value="Metz">
+                                    <option value="Montpellier">
+                                    <option value="Nantes">
+                                    <option value="Nice">
+                                    <option value="Nîmes">
+                                    <option value="Reims">
+                                    <option value="Rennes">
+                                    <option value="Saint-Étienne">
+                                    <option value="Strasbourg">
+                                    <option value="Toulouse"> 
+                                    <option value="Atalanta"> 
+                                    <option value="Bologna">
+                                    <option value="Cagliari">
+                                    <option value="Fiorentina">
+                                    <option value="Genoa">
+                                    <option value="Hellas Verona">
+                                    <option value="Inter">
+                                    <option value="Juventus">
+                                    <option value="Lazio">
+                                    <option value="Lecce">
+                                    <option value="Milan">
+                                    <option value="Napoli">
+                                    <option value="Parma">
+                                    <option value="Roma">
+                                    <option value="Sampdoria">
+                                    <option value="Sassuolo">
+                                    <option value="SPAL">
+                                    <option value="Torino">
+                                    <option value="Udinese">
+                                                                      
+                            </datalist> 
+                        
+                    </div>
+                   
+                    
+
+                </div>
+                <div class="v">  
+                    <input type="submit" style="background-color: #eebb4d;
+                    border-color: #eebb4d; border-radius: 8px;" value="Get Your Team" id='file' >
+                </div>
+                   
+            </form>
+
+     <br><br>      
+        
+     </div>  
+
+    <div class="center">
+      <h1>Your Dream team Is Here(Select eleven of them)</h1>
+        <table>
+            <tr>
+                <th>Name </th>
+                <th>Position </th>
+                <th>Club </th>
+            </tr>
+            {% for name,position,club in final_team %}
+             
+                <tr>
+                    <td> {{ name }}   </td>
+                    <td> {{ position }}  </td>
+                    <td> {{ club }}  </td>
+                </tr>
+                   
+            {% endfor %}    
+        </table>    
+     </div> 
+    
+   
+     
+</body>
+
+
+{% endblock %}

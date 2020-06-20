@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{%  block content %}
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  .container {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  </style>
+  </head>
+  <body>
+     
+     <!--<div class="container">
+       <img src="{% static 'img/FISHT-STADIUM.jpg' %}" alt="Snow" ;>
+       <div class="centered">Bet with our team and win</div>
+     </div>-->
+
+     <div style="position: relative;  margin-top:20px ;">
+      <h1 style="text-align: center;"><strong>Bet & Win</strong></h1>
+      <img src="{% static 'img/hazard.jpg' %}" alt="Snow" ;>
+      <div class="centered"><a href="{% url 'register' %}"><h1>Bet with our team and win</h1></a></div>
+     </div>
+
+     <div style="position: relative;">
+      <img src="{% static 'img/sterling.jpg' %}" alt="Snow" ;>
+      <div class="centered"><a href="{% url 'login' %}"><h1>Login and get best player's for your team</h1></a></div>
+     </div>
+
+     
+
+  </body>
+  
+{% endblock %}
