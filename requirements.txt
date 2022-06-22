@@ -2,7 +2,7 @@ asgiref==3.2.7
 colorama==0.4.3
 Django==3.0.7
 django-pandas==0.6.2
-numpy==1.18.5
+numpy==1.22.0
 pandas==1.0.4
 psycopg2==2.8.5
 psycopg2-binary==2.8.5
